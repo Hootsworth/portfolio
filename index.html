@@ -3,543 +3,707 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya P Dixit | AI Builder & Filmmaker</title>
+    <title>Aditya P Dixit | Index</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-paper: #F7F5F0;
-            --ink-black: #1A1A1A;
-            --ink-light: #5A5A5A;
-            --draft-red: #E03E3E;
-            --blueprint-blue: #3E6AE0;
-            --sticker-yellow: #FFD43B;
-            --grid-color: rgba(26, 26, 26, 0.06);
+            --bg: #EAE8E3; 
+            --ink: #0A0A0A; 
+            --ink-muted: #737373;
+            --line: rgba(10, 10, 10, 0.15);
+            --serif: 'Cormorant Garamond', serif;
+            --sans: 'Manrope', sans-serif;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
 
         body {
-            background-color: var(--bg-paper);
-            /* Graph paper background */
-            background-image: 
-                linear-gradient(var(--grid-color) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-            background-size: 24px 24px;
-            color: var(--ink-black);
-            font-family: 'DM Mono', monospace;
-            overflow-x: hidden;
+            background-color: var(--bg);
+            color: var(--ink);
+            font-family: var(--sans);
+            font-weight: 300;
             line-height: 1.5;
+            cursor: none; 
+            overflow-x: hidden;
         }
 
-        ::selection {
-            background: var(--sticker-yellow);
-            color: var(--ink-black);
-        }
-
-        /* TYPOGRAPHY */
-        h1, h2, h3, .display-font {
-            font-family: 'Playfair Display', serif;
-        }
-        .sans-font {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .handwriting {
-            font-family: 'Caveat', cursive;
-            color: var(--draft-red);
-            font-size: 1.5rem;
-            transform: rotate(-5deg);
-        }
-
-        /* LAYOUT & CONTAINERS */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 5vw;
-        }
-
-        /* HEADER & PFP */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding-top: 2rem;
-            margin-bottom: 6rem;
-            position: relative;
-        }
-
-        .logo {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 500;
-        }
-
-        .pfp-wrapper {
-            position: relative;
-            z-index: 10;
-        }
-
-        .pfp-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 2px solid var(--ink-black);
-            background: #fff;
-            object-fit: cover;
-            box-shadow: 4px 4px 0px var(--ink-black);
-            transform: rotate(3deg);
-            transition: transform 0.3s ease;
-        }
-
-        .pfp-image:hover {
-            transform: rotate(0deg) scale(1.05);
-        }
-
-        .thats-me-annotation {
-            position: absolute;
-            top: 40px;
-            right: 140px;
-            width: 150px;
-            pointer-events: none;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .thats-me-annotation svg {
-            width: 60px;
-            height: 40px;
-            stroke: var(--draft-red);
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            margin-bottom: -5px;
-            transform: rotate(15deg);
-        }
-
-        /* HERO SECTION */
-        .hero {
-            position: relative;
-            margin-bottom: 8rem;
-        }
-
-        .hero-title {
-            font-size: clamp(3rem, 8vw, 6rem);
-            line-height: 0.9;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Drafting crosshairs for title */
-        .hero-title::before, .hero-title::after {
+        body::before {
             content: '';
-            position: absolute;
-            background: var(--ink-black);
-            opacity: 0.3;
-        }
-        .hero-title::before { top: 50%; left: -50vw; width: 200vw; height: 1px; }
-        .hero-title::after { left: 10%; top: -200px; height: 500px; width: 1px; }
-
-        .hero-title i {
-            font-style: italic;
-            color: var(--ink-light);
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.04%22/%3E%3C/svg%3E');
+            pointer-events: none;
+            z-index: 9998;
         }
 
-        .hero-subtitle {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-top: 2rem;
-            padding-left: 2rem;
-            border-left: 2px solid var(--draft-red);
+        ::selection { background: var(--ink); color: var(--bg); }
+
+        /* CURSOR */
+        #cursor {
+            position: fixed; top: 0; left: 0;
+            width: 12px; height: 12px;
+            background: var(--ink);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), height 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
+        }
+        #cursor.active { width: 80px; height: 80px; background: var(--bg); }
+
+        .abstract-orb {
+            position: fixed; top: 40%; left: 60%;
+            width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(10, 10, 10, 0.04) 0%, rgba(234, 232, 227, 0) 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(40px);
+            z-index: -1;
+            animation: drift 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+        @keyframes drift {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            100% { transform: translate(-40%, -60%) scale(1.2); }
         }
 
-        .status-badge {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--ink-black);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            background: #fff;
-            box-shadow: 2px 2px 0px var(--ink-black);
-        }
+        .container { width: 100%; max-width: 1600px; margin: 0 auto; padding: 0 4vw; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* CARDS (Flashcard style) */
-        .card {
-            background: #fff;
-            border: 1.5px solid var(--ink-black);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 6px 6px 0px var(--ink-black);
-            position: relative;
-            transition: transform 0.2s, box-shadow 0.2s;
+        /* CONTENT TRANSITIONS */
+        .content-fade {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
+        .content-fade.hidden { opacity: 0; transform: translateY(10px); }
 
-        .card:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 8px 8px 0px var(--ink-black);
+        /* NAVIGATION & PERSPECTIVE SWITCHER */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            padding: 2.5rem 4vw;
+            display: flex; justify-content: space-between; align-items: flex-start;
+            mix-blend-mode: difference; color: var(--bg);
+            z-index: 100; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;
+            pointer-events: none;
         }
+        nav > div { pointer-events: auto; }
+        .nav-links { display: flex; gap: 3vw; align-items: center; }
+        a { color: inherit; text-decoration: none; position: relative; }
 
-        .section-header {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            position: relative;
-            display: inline-block;
+        .perspective-switcher {
+            display: flex; gap: 1vw; align-items: center;
+            border: 1px solid rgba(234, 232, 227, 0.3);
+            padding: 0.4rem 0.8rem; border-radius: 40px;
+        }
+        .p-label { color: rgba(234, 232, 227, 0.5); margin-right: 0.5rem; }
+        .p-btn {
+            background: transparent; border: none; color: var(--bg);
+            font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.1em;
+            cursor: pointer; opacity: 0.5; transition: all 0.3s ease; text-transform: uppercase;
+        }
+        .p-btn:hover { opacity: 1; }
+        .p-btn.active { opacity: 1; font-weight: 500; border-bottom: 1px solid var(--bg); }
+
+        /* HERO EXHIBITION */
+        .hero {
+            min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid var(--line);
+        }
+        .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 15vh 0; position: relative; }
+        .hero-right {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            border-left: 1px solid var(--line);
+            background: radial-gradient(circle, rgba(10, 10, 10, 0.02) 0%, transparent 70%);
+        }
+        .hero-title {
+            font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 10rem);
+            font-weight: 300; line-height: 0.85; letter-spacing: -0.03em; text-transform: uppercase; margin-left: -0.5vw;
+        }
+        .hero-title span { display: block; opacity: 0; animation: fadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .hero-title span:nth-child(2) { animation-delay: 0.2s; padding-left: 4vw; }
+        .hero-title span:nth-child(3) { animation-delay: 0.4s; padding-left: 8vw; font-style: italic; }
+
+        .hero-meta {
+            margin-top: 5rem; display: flex; flex-direction: column; gap: 1.5rem;
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
+            opacity: 0; animation: fadeUp 1.5s 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .hero-meta-item { display: flex; align-items: center; gap: 1.5rem; }
+        .hero-meta-item::before { content: ''; display: block; width: 30px; height: 1px; background: var(--ink); opacity: 0.3; }
+
+        .hero-image {
+            width: 100%; height: 100%; padding: 4vw; object-fit: contain;
+            mix-blend-mode: multiply; opacity: 0;
+            animation: fadeUp 1.5s 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .art-badge {
+            position: absolute; bottom: 4vw; right: 4vw; width: 110px; height: 110px;
+            border: 1px dashed var(--ink-muted); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.6rem; text-align: center; letter-spacing: 0.15em; text-transform: uppercase;
+            animation: spin 25s linear infinite; color: var(--ink-muted); pointer-events: none;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* STATEMENT / THESIS */
+        .statement {
+            padding: 15vh 0; display: grid; grid-template-columns: 3fr 7fr;
+            gap: 4vw; align-items: center; border-top: 1px solid var(--line);
+        }
+        .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); align-self: start; margin-top: 1rem; }
+        .thesis-text { font-family: var(--serif); font-size: clamp(2rem, 4vw, 4rem); line-height: 1.1; font-weight: 300; }
+        .thesis-text i { color: var(--ink-muted); }
+
+        /* THE MEDIUMS (WHEEL) */
+        .mediums {
+            padding: 15vh 0; border-top: 1px solid var(--line); display: grid;
+            grid-template-columns: 1fr 1fr; align-items: center; position: relative; overflow: hidden; min-height: 80vh;
         }
         
-        .section-header .handwriting {
-            position: absolute;
-            top: -15px;
-            right: -40px;
+        .wheel-interaction-zone {
+            position: relative; height: 80vh; width: 100%; display: flex; align-items: center;
+            cursor: grab; /* Indicates scrollability */
+        }
+        .wheel-interaction-zone:active { cursor: grabbing; }
+
+        .wheel-arc {
+            position: absolute; left: -40vw; top: 50%; transform: translateY(-50%);
+            width: 80vw; height: 80vw; border-radius: 50%; border: 1px dashed var(--line); pointer-events: none;
         }
 
-        /* PROJECTS GRID */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 8rem;
+        .wheel-instruction {
+            position: absolute; left: 1vw; top: 10%; 
+            font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--ink-muted);
+            display: flex; flex-direction: column; align-items: center; gap: 1rem; opacity: 0.6; pointer-events: none;
+        }
+        .wheel-instruction::after {
+            content: ''; height: 100px; width: 1px; background: linear-gradient(to bottom, var(--ink-muted), transparent);
         }
 
-        .proj-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px dashed var(--ink-light);
+        .wheel-item {
+            position: absolute; left: 0vw; top: 50%; height: 100px; margin-top: -50px; width: 40vw; 
+            text-align: right; font-family: var(--sans); font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: 200; color: var(--line); transform-origin: left center;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease, opacity 0.4s ease;
+            display: flex; justify-content: flex-end; align-items: center; pointer-events: none;
         }
+        .wheel-num { padding-right: 2vw; transition: all 0.4s ease; }
+        .wheel-item.active { color: var(--ink); font-weight: 400; }
 
-        .proj-name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
+        .wheel-content { padding-left: 4vw; opacity: 1; transition: opacity 0.4s ease; }
+        .wheel-content.fade-out { opacity: 0; }
+        .wheel-content-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); margin-bottom: 2rem; }
+        .wheel-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 4rem); line-height: 1; margin-bottom: 1.5rem; }
+        .wheel-desc { color: var(--ink-muted); max-width: 400px; font-size: 1.1rem; }
+
+        /* ARCHIVE (Projects) */
+        .archive { padding: 10vh 0; border-top: 1px solid var(--line); }
+        .archive-list { margin-top: 4vh; display: flex; flex-direction: column; }
+        .archive-item {
+            display: grid; grid-template-columns: 1fr 4fr 2fr 1fr; padding: 3vh 0;
+            border-bottom: 1px solid var(--line); align-items: center;
+            transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
+        .archive-item:hover { padding-left: 2vw; }
+        .archive-item:hover .item-title { font-style: italic; }
+        .item-num { font-size: 0.75rem; color: var(--ink-muted); }
+        .item-title { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 3rem); font-weight: 400; transition: font-style 0.3s ease; }
+        .item-desc { font-size: 0.85rem; color: var(--ink-muted); max-width: 350px; opacity: 0; transform: translateX(-20px); transition: all 0.4s ease; }
+        .archive-item:hover .item-desc { opacity: 1; transform: translateX(0); }
+        .item-year { font-size: 0.75rem; text-align: right; }
 
-        .proj-year {
-            font-size: 0.8rem;
-            color: var(--ink-light);
+        /* ACCOLADES */
+        .accolades { padding: 10vh 0; border-top: 1px solid var(--line); }
+        .plaque-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2vw; margin-top: 6vh; }
+        .plaque {
+            border: 1px solid var(--line); padding: 3vw; aspect-ratio: 1;
+            display: flex; flex-direction: column; justify-content: space-between;
+            background: transparent; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer; position: relative; overflow: hidden; z-index: 1;
         }
-
-        .proj-desc {
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            min-height: 80px;
+        .plaque::after {
+            content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 100%;
+            background: var(--ink); transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1); z-index: -1;
         }
-
-        .proj-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+        .plaque:hover::after { top: 0; }
+        .plaque:hover { color: var(--bg); border-color: var(--ink); }
+        .plaque-top { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); transition: color 0.4s; }
+        .plaque:hover .plaque-top { color: rgba(234, 232, 227, 0.7); }
+        .plaque-title { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2.5rem); line-height: 1.1; }
+        .plaque-title-wrapper { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .plaque-desc {
+            font-size: 0.85rem; opacity: 0; transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: absolute;
+            bottom: 3vw; left: 3vw; right: 3vw; color: rgba(234, 232, 227, 0.8);
         }
+        .plaque:hover .plaque-title-wrapper { transform: translateY(-40px); }
+        .plaque:hover .plaque-desc { opacity: 1; transform: translateY(0); }
 
-        .tag {
-            font-size: 0.7rem;
-            padding: 0.25rem 0.5rem;
-            background: var(--bg-paper);
-            border: 1px solid var(--ink-black);
-            border-radius: 4px;
-            text-transform: uppercase;
+        /* CHRONOLOGY */
+        .chronology { padding: 10vh 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 3fr 7fr; gap: 4vw; }
+        .timeline { display: flex; flex-direction: column; }
+        .timeline-item { display: grid; grid-template-columns: 1fr 2fr; padding: 2.5vh 0; border-bottom: 1px solid var(--line); }
+        .timeline-year { font-size: 0.75rem; color: var(--ink-muted); }
+        .timeline-role { font-size: 1rem; font-weight: 500; margin-bottom: 0.25rem; }
+        .timeline-org { font-family: var(--serif); font-size: 1.25rem; font-style: italic; color: var(--ink-muted); }
+
+        /* CV BUTTON */
+        .cv-btn { border: 1px solid var(--bg); padding: 0.4rem 1.2rem; border-radius: 40px; transition: all 0.4s; }
+        .cv-btn:hover { background: var(--bg); color: var(--ink); }
+
+        /* HOVER SHAPES */
+        #hover-wrapper { position: fixed; top: 0; left: 0; pointer-events: none; z-index: -1; }
+        .hover-shape {
+            position: absolute; top: 50%; left: 50%; width: 0px; height: 0px; opacity: 0;
+            transform: translate(-50%, -50%) rotate(0deg);
+            transition: opacity 0.4s ease, width 0.6s cubic-bezier(0.16, 1, 0.3, 1), height 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.6s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            mix-blend-mode: multiply;
         }
+        .shape-active { opacity: 0.8; }
+        .shape-circle { width: 400px; height: 400px; border-radius: 50%; background: #D9D2C5; }
+        .shape-square { width: 350px; height: 350px; border-radius: 0; background: #C5D9D2; transform: translate(-50%, -50%) rotate(15deg); }
+        .shape-pill { width: 500px; height: 200px; border-radius: 200px; background: #D9C5C5; transform: translate(-50%, -50%) rotate(-10deg); }
+        .shape-diamond { width: 300px; height: 300px; border-radius: 0; background: #C5C9D9; transform: translate(-50%, -50%) rotate(45deg); }
 
-        /* EXPERIENCE TIMELINE */
-        .experience-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-bottom: 8rem;
-            position: relative;
-        }
+        /* FOOTER */
+        footer { padding: 15vh 0 5vh; text-align: center; border-top: 1px solid var(--line); }
+        .footer-title { font-family: var(--serif); font-size: clamp(3rem, 8vw, 8rem); font-weight: 300; margin-bottom: 5vh; }
+        .footer-links { display: flex; justify-content: center; gap: 4vw; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .footer-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 1px; background: var(--ink); transform: scaleX(0); transform-origin: right; transition: transform 0.4s; }
+        .footer-links a:hover::after { transform: scaleX(1); transform-origin: left; }
 
-        .experience-list::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: var(--ink-black);
-            opacity: 0.2;
-        }
-
-        .exp-item {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .exp-item::before {
-            content: '';
-            position: absolute;
-            left: -4px;
-            top: 6px;
-            width: 9px;
-            height: 9px;
-            background: var(--bg-paper);
-            border: 1.5px solid var(--ink-black);
-            border-radius: 50%;
-        }
-
-        .exp-role {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .exp-meta {
-            font-size: 0.8rem;
-            color: var(--ink-light);
-            margin-bottom: 0.5rem;
-        }
-
-        /* FOOTER / CONTACT */
-        .footer {
-            border-top: 2px solid var(--ink-black);
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-            position: relative;
-        }
-
-        .footer-title {
-            font-size: 3rem;
-            line-height: 1;
-        }
-
-        .links {
-            display: flex;
-            gap: 2rem;
-            align-items: flex-end;
-        }
-
-        .links a {
-            color: var(--ink-black);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            font-weight: 600;
-            position: relative;
-        }
-
-        .links a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: var(--ink-black);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s;
-        }
-
-        .links a:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        /* Sticker accents */
-        .sticker {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid var(--ink-black);
-            z-index: 5;
-        }
-        .s-yellow { background: var(--sticker-yellow); top: 10%; right: 10%; }
-        .s-blue { background: var(--blueprint-blue); bottom: 20%; left: 5%; }
-
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-            .thats-me-annotation { display: none; }
-            .header { align-items: center; }
-            .footer { flex-direction: column; }
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; min-height: auto; border-bottom: none; }
+            .hero-right { border-left: none; border-top: 1px solid var(--line); height: 70vh; }
+            .statement, .chronology, .mediums { grid-template-columns: 1fr; gap: 2rem; }
+            .mediums { padding: 10vh 0; height: auto; }
+            .wheel-interaction-zone { height: 50vh; }
+            .wheel-arc { left: -75vw; width: 150vw; height: 150vw; }
+            .wheel-item { left: 0; width: 75vw; font-size: 3rem; }
+            .wheel-instruction { left: 4vw; flex-direction: row; }
+            .wheel-instruction::after { width: 100px; height: 1px; background: linear-gradient(to right, var(--ink-muted), transparent); }
+            .plaque-grid { grid-template-columns: 1fr; }
+            .plaque { aspect-ratio: auto; min-height: 250px; }
+            .archive-item { grid-template-columns: auto 1fr auto; gap: 1rem; }
+            .item-desc { display: none; }
+            .perspective-switcher { display: none; /* Hide on small screens to save nav space */ }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="sticker s-yellow"></div>
-    
+    <div id="cursor"></div>
+    <div id="hover-wrapper"><div id="hover-shape" class="hover-shape"></div></div>
+    <div class="abstract-orb"></div>
+
+    <nav>
+        <div>IDX: ADITYA P DIXIT</div>
+        <div class="perspective-switcher hover-target">
+            <span class="p-label">LENS:</span>
+            <button class="p-btn active" data-role="me">Me</button>
+            <button class="p-btn" data-role="aiml">AI / ML</button>
+            <button class="p-btn" data-role="sde">SDE</button>
+            <button class="p-btn" data-role="qa">QA</button>
+        </div>
+        <div class="nav-links">
+            <a href="#statement" class="hover-target">Thesis</a>
+            <a href="#archive" class="hover-target">Archive</a>
+            <a href="ADITYA_P_DIXIT_RESUME.pdf" target="_blank" class="hover-target cv-btn">CV ↗</a>
+        </div>
+    </nav>
+
     <div class="container">
-        <header>
-            <div class="logo">
-                Aditya P Dixit<br>
-                <span style="font-size: 0.7rem; color: var(--ink-light);">CGPA: 9.0 | B.Tech (Hons.) CS</span>
-            </div>
-            
-            <div class="pfp-wrapper">
-                <div class="thats-me-annotation">
-                    <span class="handwriting"></span>
-                    <svg viewBox="0 0 100 100">
-                        <path d="M10,10 Q50,20 80,80 M70,75 L80,80 L75,65" />
-                    </svg>
+        
+        <!-- HERO -->
+        <header class="hero">
+            <div class="hero-left">
+                <h1 class="hero-title">
+                    <span>Aditya</span>
+                    <span>P.</span>
+                    <span>Dixit</span>
+                </h1>
+                <div class="hero-meta content-fade" id="dyn-meta">
+                    <div class="hero-meta-item">AI & ML Infrastructure</div>
+                    <div class="hero-meta-item">Filmmaker / Director</div>
+                    <div class="hero-meta-item">Bengaluru, IN</div>
                 </div>
-                <img src="pfp.png" alt="Aditya" class="pfp-image">
+            </div>
+            <div class="hero-right">
+                <img src="pfp.png" alt="Aditya P Dixit" class="hero-image hover-target">
+                <div class="art-badge">IDX // 01<br>SYS. ON</div>
             </div>
         </header>
 
-        <section class="hero">
-            <h1 class="hero-title display-font">
-                Developer <i>Brain.</i><br>
-                Filmmaker <i>Soul.</i>
-            </h1>
-            <p class="hero-subtitle">
-                Building autonomous agent systems and safety infrastructure. Obsessed with reliable real-world AI — from LLM policy enforcement to deep RL agents. 
-            </p>
-            <div class="status-badge">
-                > System Online _
+        <!-- STATEMENT -->
+        <section id="statement" class="statement reveal">
+            <div class="section-label">01 // Thesis</div>
+            <div class="thesis-text content-fade" id="dyn-thesis">
+                I build autonomous agent systems and safety infrastructure. <i>Obsessed with reliable real-world AI</i>—bridging the gap between strict computational logic and human-centered design.
             </div>
         </section>
 
-        <section>
-            <h2 class="section-header display-font">
-                Selected Works
-                <span class="handwriting">Ready to execute</span>
-            </h2>
-            <div class="projects-grid">
-                
-                <div class="card">
-                    <div class="proj-top">
-                        <span class="proj-name">XRisk Engine</span>
-                        <span class="proj-year">2025</span>
-                    </div>
-                    <p class="proj-desc">Open-source policy enforcement layer for LLM agents. 3 decision states, 6-signal weighted risk model, 100% pass rate across 20+ scenario tests.</p>
-                    <div class="proj-tags">
-                        <span class="tag">LLM Safety</span>
-                        <span class="tag">Node.js</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="proj-top">
-                        <span class="proj-name">Cortex Kit</span>
-                        <span class="proj-year">2025</span>
-                    </div>
-                    <p class="proj-desc">8-package modular toolkit for agent memory, planning, and execution. SHA-256 plan hashing for reproducible multi-step execution. 0 failures.</p>
-                    <div class="proj-tags">
-                        <span class="tag">Cognitive Infra</span>
-                        <span class="tag">Node.js</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="proj-top">
-                        <span class="proj-name">Wiggle AI ★</span>
-                        <span class="proj-year">2025</span>
-                    </div>
-                    <p class="proj-desc">Browser extension that upgrades your cursor into a multi-modal AI agent. Live DOM rewrite, swarm web research, and a "Sniper" vision agent.</p>
-                    <div class="proj-tags">
-                        <span class="tag">Gemini API</span>
-                        <span class="tag">DOM Manipulation</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="proj-top">
-                        <span class="proj-name">DQL Agent</span>
-                        <span class="proj-year">2025</span>
-                    </div>
-                    <p class="proj-desc">Deep Q-learning agents for Pac-Man, Minesweeper, and Snake. 100% success rate in Pac-Man evaluation with iterative reward improvement.</p>
-                    <div class="proj-tags">
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">Deep RL</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="proj-top">
-                        <span class="proj-name">Intents</span>
-                        <span class="proj-year">2025</span>
-                    </div>
-                    <p class="proj-desc">A calm browser layer for people who lose their train of thought. Context ladder, "Hold That Thought" text saving. Local-first, no accounts.</p>
-                    <div class="proj-tags">
-                        <span class="tag">Local-First</span>
-                        <span class="tag">UX</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="proj-top">
-                        <span class="proj-name">Firefly</span>
-                        <span class="proj-year">2025</span>
-                    </div>
-                    <p class="proj-desc">Deterministic performance diagnostics. Expected-time modeling, observed vs. modeled delta analysis, visual system designer. Tauri desktop app.</p>
-                    <div class="proj-tags">
-                        <span class="tag">Tauri</span>
-                        <span class="tag">Rust</span>
-                    </div>
-                </div>
-
+        <!-- THE MEDIUMS (Wheel) -->
+        <section id="mediums" class="mediums">
+            <div class="wheel-interaction-zone reveal" id="wheel-zone">
+                <div class="wheel-instruction">Scroll / Swipe</div>
+                <div class="wheel-arc"></div>
+                <div class="wheel-item" data-index="0"><div class="wheel-num">01</div></div>
+                <div class="wheel-item" data-index="1"><div class="wheel-num">02</div></div>
+                <div class="wheel-item" data-index="2"><div class="wheel-num">03</div></div>
+                <div class="wheel-item" data-index="3"><div class="wheel-num">04</div></div>
+                <div class="wheel-item" data-index="4"><div class="wheel-num">05</div></div>
+            </div>
+            <div class="wheel-content reveal" id="wheel-content">
+                <div class="wheel-content-label">02 // The Mediums</div>
+                <h3 class="wheel-title" id="wheel-title">Agentic Systems</h3>
+                <p class="wheel-desc" id="wheel-desc">Building autonomous, self-prompting agents and cognitive memory loops using modern LLMs.</p>
             </div>
         </section>
 
-        <section>
-            <h2 class="section-header display-font">
-                Experience
-                <span class="handwriting">The timeline</span>
-            </h2>
-            <div class="experience-list">
-                
-                <div class="exp-item">
-                    <div class="exp-role">Summer Intern</div>
-                    <div class="exp-meta">Centre of Applied and Responsible AI (CARA), RV University | June 2026 – July 2026</div>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-role">Student Placement Coordinator</div>
-                    <div class="exp-meta">RV University | March 2026 – Present</div>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-role">Student Assistant</div>
-                    <div class="exp-meta">The Library by Brigade, RV University | March 2026 – August 2026</div>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-role">Open Source Head</div>
-                    <div class="exp-meta">FOSS United | Jan 2026 – Present</div>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-role">WebOps Head</div>
-                    <div class="exp-meta">Iterium | Oct 2025 – Present</div>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-role">Head of Literature</div>
-                    <div class="exp-meta">Poéthra | Aug 2025 – Present</div>
-                </div>
-
+        <!-- ARCHIVE (Projects) -->
+        <section id="archive" class="archive">
+            <div class="section-label reveal">03 // The Archive</div>
+            <div class="archive-list content-fade" id="dyn-archive">
+                <!-- Populated via JS -->
             </div>
-            <div class="sticker s-blue"></div>
         </section>
 
-        <footer class="footer">
-            <div class="footer-title display-font">
-                Thank You, <span class="handwriting" style="font-size: 3rem; transform: rotate(0deg); display: inline-block;">bye!</span>
+        <!-- ACCOLADES -->
+        <section id="accolades" class="accolades">
+            <div class="section-label reveal">04 // Accolades</div>
+            <div class="plaque-grid">
+                <div class="plaque hover-target reveal">
+                    <div class="plaque-top">Plaque // 001</div>
+                    <div class="plaque-title-wrapper">
+                        <div class="plaque-title">1st Place<br>Ideathon</div>
+                    </div>
+                    <div class="plaque-desc">Won first place among 95+ teams at RV University's Kalpavikas 1.0, demonstrating product thinking and technical depth.</div>
+                </div>
+                <div class="plaque hover-target reveal">
+                    <div class="plaque-top">Plaque // 002</div>
+                    <div class="plaque-title-wrapper">
+                        <div class="plaque-title">Gold Medal<br>Chess</div>
+                    </div>
+                    <div class="plaque-desc">Intra-College Chess Competition winner at NSAM PU College. Strategic planning translated across domains.</div>
+                </div>
+                <div class="plaque hover-target reveal">
+                    <div class="plaque-top">Plaque // 003</div>
+                    <div class="plaque-title-wrapper">
+                        <div class="plaque-title">Flutter App<br>Suite</div>
+                    </div>
+                    <div class="plaque-desc">Developed and shipped 5+ cross-platform applications focused on data integrity with 100+ active global users.</div>
+                </div>
             </div>
-            <div class="links sans-font">
-                <a href="mailto:adityapdixit6626@gmail.com">Email</a>
-                <a href="https://github.com/Hootsworth" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/aditya-p-dixit" target="_blank">LinkedIn</a>
-                <a href="tel:+918310307185">Phone</a>
+        </section>
+
+        <!-- CHRONOLOGY -->
+        <section id="chronology" class="chronology">
+            <div class="section-label reveal">05 // Chronology</div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2026 // JUN—JUL</div>
+                    <div><div class="timeline-role">Summer Intern</div><div class="timeline-org">CARA, RV University</div></div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2026 // MAR—AUG</div>
+                    <div><div class="timeline-role">Student Assistant</div><div class="timeline-org">The Library by Brigade</div></div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2026 // MAR—PRS</div>
+                    <div><div class="timeline-role">Placement Coordinator</div><div class="timeline-org">RV University</div></div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2026 // JAN—PRS</div>
+                    <div><div class="timeline-role">Open Source Head</div><div class="timeline-org">FOSS United</div></div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2025 // OCT—PRS</div>
+                    <div><div class="timeline-role">WebOps Head</div><div class="timeline-org">Iterium</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-title hover-target reveal">Connect</div>
+            <div class="footer-links reveal">
+                <a href="mailto:adityapdixit6626@gmail.com" class="hover-target">Email</a>
+                <a href="https://github.com/Hootsworth" target="_blank" class="hover-target">Github</a>
+                <a href="https://linkedin.com/in/aditya-p-dixit" target="_blank" class="hover-target">LinkedIn</a>
             </div>
         </footer>
     </div>
 
+    <script>
+        /* --- CURSOR & HOVER EFFECTS --- */
+        const cursor = document.getElementById('cursor');
+        const hoverWrapper = document.getElementById('hover-wrapper');
+        const hoverShape = document.getElementById('hover-shape');
+        let mouseX = 0, mouseY = 0;
+        let shapeX = window.innerWidth / 2, shapeY = window.innerHeight / 2;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
+        });
+
+        function animateShape() {
+            shapeX += (mouseX - shapeX) * 0.08;
+            shapeY += (mouseY - shapeY) * 0.08;
+            hoverWrapper.style.transform = `translate(${shapeX}px, ${shapeY}px)`;
+            requestAnimationFrame(animateShape);
+        }
+        animateShape();
+
+        function bindHoverTargets() {
+            document.querySelectorAll('.hover-target, a, button').forEach(target => {
+                target.removeEventListener('mouseenter', cursorOn);
+                target.removeEventListener('mouseleave', cursorOff);
+                target.addEventListener('mouseenter', cursorOn);
+                target.addEventListener('mouseleave', cursorOff);
+            });
+            
+            document.querySelectorAll('.archive-item').forEach(item => {
+                item.removeEventListener('mouseenter', shapeOn);
+                item.removeEventListener('mouseleave', shapeOff);
+                item.addEventListener('mouseenter', shapeOn);
+                item.addEventListener('mouseleave', shapeOff);
+            });
+        }
+        const cursorOn = () => cursor.classList.add('active');
+        const cursorOff = () => cursor.classList.remove('active');
+        const shapeOn = (e) => hoverShape.className = `hover-shape shape-active ${e.currentTarget.getAttribute('data-shape')}`;
+        const shapeOff = () => hoverShape.className = 'hover-shape';
+
+        /* --- PORTFOLIO DATA (PERSPECTIVES) --- */
+        const portfolioData = {
+            me: {
+                meta: ['AI & ML Infrastructure', 'Filmmaker / Director', 'Bengaluru, IN'],
+                thesis: 'I build autonomous agent systems and safety infrastructure. <i>Obsessed with reliable real-world AI</i>—bridging the gap between strict computational logic and human-centered design.',
+                skills: [
+                    { title: 'Agentic Systems', desc: 'Building autonomous, self-prompting agents and cognitive memory loops using modern LLMs.' },
+                    { title: 'Deep Learning', desc: 'Developing deep reinforcement learning agents for deterministic environments using PyTorch.' },
+                    { title: 'LLM Safety', desc: 'Engineering policy enforcement layers, risk scoring mechanisms, and prompt-injection defenses.' },
+                    { title: 'The Stack', desc: 'Python, JavaScript / Node.js, Rust (Tauri), and Dart / Flutter.' },
+                    { title: 'Film & Narrative', desc: 'Directing, literature curation, and structuring compelling interactive experiences.' }
+                ],
+                projects: [
+                    { num: '001', title: 'XRisk Engine', desc: 'Policy enforcement layer for LLM agents. 6-signal weighted risk model.', year: '2025', shape: 'shape-circle', link: 'https://github.com/Hootsworth/XRisk' },
+                    { num: '002', title: 'Cortex Kit', desc: 'Agent memory and execution toolkit utilizing SHA-256 plan hashing.', year: '2025', shape: 'shape-square', link: 'https://github.com/Hootsworth/cortexKit' },
+                    { num: '003', title: 'Wiggle AI', desc: 'Browser-native, multi-modal cursor agent manipulating the live DOM.', year: '2025', shape: 'shape-pill', link: 'https://github.com/Hootsworth/wiggle' },
+                    { num: '004', title: 'DQL Agent', desc: 'Deep Reinforcement Learning architecture conquering deterministic environments.', year: '2025', shape: 'shape-diamond', link: 'https://github.com/Hootsworth/DQL_Game' },
+                    { num: '005', title: 'Intents UX', desc: 'A calm, local-first browser layer designed to capture cognitive trains of thought.', year: '2025', shape: 'shape-circle', link: 'https://github.com/Hootsworth/Intents' },
+                    { num: '006', title: 'Firefly', desc: 'Deterministic system diagnostics mapped in a Tauri/Rust desktop environment.', year: '2025', shape: 'shape-pill', link: 'https://github.com/Hootsworth/Firefly' }
+                ]
+            },
+            aiml: {
+                meta: ['Machine Learning Engineer', 'AI Systems Architect', 'Bengaluru, IN'],
+                thesis: 'Specializing in deep reinforcement learning, agentic architectures, and open-source AI safety tooling. <i>Driven by constructing robust models</i> that transition seamlessly from research to production.',
+                skills: [
+                    { title: 'Deep RL', desc: 'Experience replay & reward engineering in PyTorch for deterministic environments.' },
+                    { title: 'Quantum ML', desc: 'Training QML models on medical datasets for binary classification tasks.' },
+                    { title: 'LLM Policy', desc: 'Risk scoring and prompt-injection defense layers for safe LLM deployments.' },
+                    { title: 'Agent Config', desc: 'Model Context Protocol (MCP), RAG pipelines, and self-correcting agents.' },
+                    { title: 'Data Stack', desc: 'Pandas, NumPy, Scikit-learn, Matplotlib, and rigorous statistical analysis.' }
+                ],
+                projects: [
+                    { num: '001', title: 'QML Seizure Det.', desc: 'Quantum ML model training achieving 85% accuracy on medical datasets.', year: '2026', shape: 'shape-diamond', link: '#' },
+                    { num: '002', title: 'DQL Agent', desc: 'Deep Q-learning agents hitting 100% eval success with +5.95 reward iter.', year: '2026', shape: 'shape-square', link: 'https://github.com/Hootsworth/DQL_Game' },
+                    { num: '003', title: 'XRisk Engine', desc: '100% pass rate LLM safety engine across 20+ scenarios using risk thresholds.', year: '2025', shape: 'shape-circle', link: 'https://github.com/Hootsworth/XRisk' },
+                    { num: '004', title: 'Cortex Kit', desc: 'Modular toolkit for agent memory, planning, and multi-step execution.', year: '2025', shape: 'shape-pill', link: 'https://github.com/Hootsworth/cortexKit' },
+                    { num: '005', title: 'Wiggle AI', desc: 'Live DOM rewrite and swarm web research via an autonomous vision agent.', year: '2025', shape: 'shape-diamond', link: 'https://github.com/Hootsworth/wiggle' }
+                ]
+            },
+            sde: {
+                meta: ['Software Dev Engineer', 'Systems Builder', 'Open Source Maintainer'],
+                thesis: 'Building highly scalable developer tooling, cross-platform applications, and custom runtime environments. <i>I focus on clean architecture</i>, open-source collaboration, and robust infrastructure.',
+                skills: [
+                    { title: 'Compilers', desc: 'Designing experimental scripting languages and runtime execution semantics.' },
+                    { title: 'Backend', desc: 'Node.js, Python, Java, SQL, and RESTful API architecture (OpenAPI).' },
+                    { title: 'Cross-Platform', desc: 'Shipping production applications globally using Flutter, Dart, and Tauri.' },
+                    { title: 'DevOps', desc: 'Docker, Kubernetes, Git, and automated CI/CD pipelines (GitHub Actions).' },
+                    { title: 'Systems', desc: 'Local-first architectures, memory pathways, and Rust-based desktop environments.' }
+                ],
+                projects: [
+                    { num: '001', title: 'RexScript', desc: 'Experimental scripting language & compiler for autonomous agent workflows.', year: '2026', shape: 'shape-square', link: '#' },
+                    { num: '002', title: 'Android App Suite', desc: '5+ Flutter applications focused on input validation with 100+ global users.', year: '2025', shape: 'shape-pill', link: '#' },
+                    { num: '003', title: 'Rex Agent', desc: 'Node.js agent framework for remote desktop execution via Discord.', year: '2025', shape: 'shape-circle', link: 'https://github.com/Hootsworth/Rex' },
+                    { num: '004', title: 'Firefly', desc: 'Cross-platform desktop packaging & benchmarking workflows using Tauri/Rust.', year: '2026', shape: 'shape-diamond', link: 'https://github.com/Hootsworth/Firefly' },
+                    { num: '005', title: 'Pulsar Browser', desc: 'Privacy-focused open-source desktop browser built for secure navigation.', year: '2025', shape: 'shape-pill', link: '#' }
+                ]
+            },
+            qa: {
+                meta: ['SDET', 'Reliability Architect', 'Systems Diagnostics'],
+                thesis: 'Obsessed with deterministic systems and zero-failure states. <i>I engineer rigorous automated testing environments</i>, CI/CD pipelines, and policy-as-code validation frameworks.',
+                skills: [
+                    { title: 'QA & Testing', desc: 'Full-scale QA environments, visual regression, and reliability testing.' },
+                    { title: 'Diagnostics', desc: 'Topology-aware performance modeling and system bottleneck analysis.' },
+                    { title: 'Security Auth', desc: 'Permissions handling, fingerprint resistance, and session persistence audits.' },
+                    { title: 'CI/CD Pipelines', desc: 'Automating multi-environment test builds and code-review validations.' },
+                    { title: 'Policy Validation', desc: 'Engineering test suites for 100% pass-rate policy enforcement layers.' }
+                ],
+                projects: [
+                    { num: '001', title: 'Pulsar Browser', desc: 'Full-scale QA environment validating permissions, state, and security isolation.', year: '2026', shape: 'shape-pill', link: '#' },
+                    { num: '002', title: 'Firefly', desc: 'Deterministic diagnostics platform with visual regression testing and CI.', year: '2026', shape: 'shape-square', link: 'https://github.com/Hootsworth/Firefly' },
+                    { num: '003', title: 'Cortex Kit', desc: '43 automated tests, 0 failures, achieving CI deployment across 6 environments.', year: '2025', shape: 'shape-circle', link: 'https://github.com/Hootsworth/cortexKit' },
+                    { num: '004', title: 'XRisk Engine', desc: 'Core validation suite recording 100% pass rates across 20+ scenario tests.', year: '2025', shape: 'shape-diamond', link: 'https://github.com/Hootsworth/XRisk' }
+                ]
+            }
+        };
+
+        /* --- DYNAMIC CONTENT UPDATER --- */
+        let currentRole = 'me';
+        let currentSkillsData = portfolioData['me'].skills;
+        
+        function populateArchive(projects) {
+            return projects.map(p => `
+                <a href="${p.link}" target="_blank" class="archive-item hover-target" data-shape="${p.shape}">
+                    <span class="item-num">${p.num}</span>
+                    <span class="item-title">${p.title}</span>
+                    <span class="item-desc">${p.desc}</span>
+                    <span class="item-year">${p.year}</span>
+                </a>
+            `).join('');
+        }
+
+        function switchPerspective(role) {
+            if (currentRole === role) return;
+            currentRole = role;
+            const data = portfolioData[role];
+            currentSkillsData = data.skills;
+
+            // UI Buttons
+            document.querySelectorAll('.p-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.p-btn[data-role="${role}"]`).classList.add('active');
+
+            // Fade Out
+            const metaContainer = document.getElementById('dyn-meta');
+            const thesisContainer = document.getElementById('dyn-thesis');
+            const archiveContainer = document.getElementById('dyn-archive');
+            
+            [metaContainer, thesisContainer, archiveContainer].forEach(el => el.classList.add('hidden'));
+
+            // Swap & Fade In
+            setTimeout(() => {
+                metaContainer.innerHTML = data.meta.map(m => `<div class="hero-meta-item">${m}</div>`).join('');
+                thesisContainer.innerHTML = data.thesis;
+                archiveContainer.innerHTML = populateArchive(data.projects);
+                
+                [metaContainer, thesisContainer, archiveContainer].forEach(el => el.classList.remove('hidden'));
+                
+                // Reset Wheel
+                activeWheelIndex = Math.floor(currentSkillsData.length / 2);
+                updateWheel(activeWheelIndex);
+                
+                bindHoverTargets();
+            }, 600);
+        }
+
+        document.querySelectorAll('.p-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => switchPerspective(e.target.getAttribute('data-role')));
+        });
+
+        /* --- WHEEL LOGIC (SCROLL / SWIPE / CLICK) --- */
+        const wheelItems = document.querySelectorAll('.wheel-item');
+        const wheelTitle = document.getElementById('wheel-title');
+        const wheelDesc = document.getElementById('wheel-desc');
+        const wheelContent = document.getElementById('wheel-content');
+        const wheelZone = document.getElementById('wheel-zone');
+        
+        let activeWheelIndex = 2; 
+        let isWheelAnimating = false;
+
+        function updateWheel(activeIndex) {
+            activeWheelIndex = activeIndex;
+            wheelItems.forEach((item, index) => {
+                const diff = index - activeIndex;
+                const angle = diff * 22; 
+                item.style.transform = `rotate(${angle}deg)`;
+                
+                const distance = Math.abs(diff);
+                item.style.opacity = Math.max(0.2, 1 - (distance * 0.35));
+                
+                if (index === activeIndex) item.classList.add('active');
+                else item.classList.remove('active');
+            });
+
+            wheelContent.classList.add('fade-out');
+            setTimeout(() => {
+                if(currentSkillsData[activeIndex]) {
+                    wheelTitle.textContent = currentSkillsData[activeIndex].title;
+                    wheelDesc.textContent = currentSkillsData[activeIndex].desc;
+                }
+                wheelContent.classList.remove('fade-out');
+            }, 300);
+        }
+
+        // Click to select
+        wheelItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                if(!isWheelAnimating) updateWheel(index);
+            });
+        });
+
+        // Mouse Wheel Scroll 
+        wheelZone.addEventListener('wheel', (e) => {
+            e.preventDefault(); // Stop page scroll inside the zone
+            if (isWheelAnimating) return;
+            isWheelAnimating = true;
+            
+            if (e.deltaY > 0) activeWheelIndex = Math.min(activeWheelIndex + 1, currentSkillsData.length - 1);
+            else activeWheelIndex = Math.max(activeWheelIndex - 1, 0);
+            
+            updateWheel(activeWheelIndex);
+            setTimeout(() => { isWheelAnimating = false; }, 500); // Debounce
+        }, { passive: false });
+
+        // Touch Swipe (Mobile)
+        let touchStartY = 0;
+        wheelZone.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        wheelZone.addEventListener('touchend', (e) => {
+            if (isWheelAnimating) return;
+            let touchEndY = e.changedTouches[0].clientY;
+            let swipeDist = touchStartY - touchEndY;
+            
+            if (Math.abs(swipeDist) > 40) { // minimum threshold
+                isWheelAnimating = true;
+                if (swipeDist > 0) activeWheelIndex = Math.min(activeWheelIndex + 1, currentSkillsData.length - 1); // Swipe Up
+                else activeWheelIndex = Math.max(activeWheelIndex - 1, 0); // Swipe Down
+                
+                updateWheel(activeWheelIndex);
+                setTimeout(() => { isWheelAnimating = false; }, 500);
+            }
+        });
+
+        /* --- INITIALIZATION --- */
+        document.getElementById('dyn-archive').innerHTML = populateArchive(portfolioData['me'].projects);
+        updateWheel(2);
+        bindHoverTargets();
+
+        // Reveal Observers
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    </script>
 </body>
 </html>
